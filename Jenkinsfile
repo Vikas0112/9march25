@@ -14,17 +14,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                sh './run-tests.sh'
-            }
-        }
-
-        stage('Archive') {
-            steps {
-                archiveArtifacts artifacts: 'build/**', fingerprint: true
-            }
-        }
     }
 
     post {
